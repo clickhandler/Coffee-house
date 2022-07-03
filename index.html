@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <title>Home</title>
+  </head>
+  <style>
+    
+ 
+    
+nav{
+display: flex;
+align-items: center;
+justify-content: space-between;
+/* padding-top: 40px;
+padding-left: 10%;
+padding-right: 10%; */
+margin-bottom: 70px;
+border: 2px solid teal;
+
+background-color: teal
+
+}
+nav ul li{
+  list-style: none;
+  display: inline-block ;
+  padding: 10px 20px;
+  
+}
+nav ul li a{
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+
+}
+  
+    #menu {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      width: 90%;
+      margin: auto;
+      gap: 10px;
+      
+    }
+    #menu div{
+      text-align: center;
+      border-radius: 7px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      margin-bottom: 20px;
+    }
+    button{
+      border-radius: 5px;
+      background-color: teal;
+      color: white;
+    }
+    #menu img {
+      width: 100%;
+      height: 250px;
+      border-radius: 7px;
+    }
+nav img{
+  
+  height: 75px;
+  
+}
+  </style>
+
+  <body>
+    <div id="navbar">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Signup</a></li>
+          <li><a href="bucket.html">Bucket</a></li>
+        </ul>
+        <div id="coffee_count">
+          <!--Show total number of coffee added to bucket here, do not add anything only Total count. Not even "Count - 5" but like this "5" -->
+        </div>
+      </nav>
+    </div>
+    <div id="menu">
+      <!--Show coffee list here in grid format-->
+      <!-- add an add to bucket button to each item, give it HTML id as 'add_to_bucket' -->
+    </div>
+  </body>
+</html>
+<script src="./index.js"></script>
