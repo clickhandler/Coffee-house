@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/signup.css">
+    <link rel="stylesheet" href="/Coffee-house/index.css" />
+    <script
+      src="https://kit.fontawesome.com/57a88932f2.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<style>
+    #signup-form-div{
+    width: 50%;
+    height: auto;
+    text-align: center;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+    background-image: radial-gradient(circle, #5c0067 0%, #00d4ff 100%);
+    
+}
+h1{
+   display: inline-block;
+}
+.signupstyle input{
+ border: 1px solid gray;
+ padding: 10px 20px 10px 20px;
+ margin: 5px;
+ border-radius: 5px;
+}
+#btn input{
+    background-color: teal;
+    border: none;
+    color: white;
+    padding: 10px 50px 10px 50px;
+    border-radius: 7px;
+
+   margin: 15px;
+
+}
+#btn input:hover{
+    cursor: pointer;
+}
+</style>
+<body>
+    <div id="navbar">
+        <nav>
+          <a href="index.html">
+            <h1>Coffee House <i class="fa-solid fa-mug-hot"></i></h1
+          ></a>
+        </nav>
+      </div>
+    <div id="signup-form-div">
+
+        <form id="UserInfo">
+            <h1>Signup</h1>
+
+            <div class="signupstyle"><input type="text" placeholder="Enter your Name" required id="name"></div>
+            <div class="signupstyle"><input type="number" placeholder="Enter your Contact" required id="phone"></div>
+            <div class="signupstyle"><input type="email" placeholder="Enter your Email" required id="mail"></div>
+            <div class="signupstyle"><input type="email" placeholder="Confirm Email" id="Confirm-mail" required></div>
+            <div class="signupstyle"><input type="password" placeholder="Enter your Password" required id="pass"></div>
+            <div class="signupstyle"><input type="password" placeholder="Confirm Paswword" id="Confirm-pass" required>
+            </div>
+            <div id="btn"><input type="submit"></div>
+        </form>
+
+    </div>
+</body>
+
+</html>
+<script>
+    document.querySelector("#UserInfo").addEventListener("submit", signupFun);
+    var UserInformation = JSON.parse(localStorage.getItem("UserData")) || []
+
+    function signupFun() {
+        event.preventDefault()
+
+        var name1 = document.getElementById("name")
+        var Phone1 = document.getElementById("phone")
+        var Email1 = document.getElementById("mail")
+        var Email2 = document.getElementById("Confirm-mail")
+        var Pass1 = document.getElementById("pass")
+        var Pass2 = document.getElementById("Confirm-pass")
+        // if(Email1.value!=Email2.value ||Pass1.value!=Pass2.value){
+        //     alert("Check your Email and Password")
+        // }
+        if (Email1.value != Email2.value) {
+            alert("Check your Email")
+        }
+        if (Pass1.value != Pass2.value) {
+            alert("Check Your Password")
+        }
+        else {
+            alert("Registration Successful")
+        }
+        let Userobj = {
+            userName: UserInfo.name.value,
+            UserEmail: UserInfo.mail.value,
+            usePass: UserInfo.pass.value
+
+        }
+
+        UserInformation.push(Userobj)
+        localStorage.setItem("UserData", JSON.stringify(UserInformation));
+        window.location.href = "login.html"
+    }
+
+
+
+
+
+</script>

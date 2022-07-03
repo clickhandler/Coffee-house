@@ -22,7 +22,7 @@ let newData=JSON.parse(localStorage.getItem("coffee"))||[]
       title.innerText = elem.title;
   
       const Price = document.createElement("p");
-      Price.innerText = elem.price;
+      Price.innerText = elem.price
   
       let btn = document.createElement("button");
       btn.innerText = "Remove";

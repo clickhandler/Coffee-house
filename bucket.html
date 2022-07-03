@@ -5,35 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/Coffee-house/index.css" />
+    <script
+      src="https://kit.fontawesome.com/57a88932f2.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
-
   <style>
-    #bucket{
+    #bucket {
       display: grid;
-    grid-template-columns: repeat(4,1fr);
-    width: 90%;
-    margin: auto;
-    gap: 10px;
+      grid-template-columns: repeat(4, 1fr);
+      width: 90%;
+      margin: auto;
+      gap: 10px;
     }
-    #bucket img{
+    #bucket img {
       width: 100%;
     }
-    
+    #confirm{
+      background-color: crimson;
+
+      font-size: 20px;
+    text-align: center;
+    padding: 15px;
+    }
   </style>
 
   <body>
-    <a href="index.html">Home</a>
-    <div id="total-div">
-      <h3 id="total_amount">
+    <div id="navbar">
+      <nav>
+        <a href="index.html">
+          <h1>Coffee House <i class="fa-solid fa-mug-hot"></i></h1
+        ></a>
+      </nav>
+    </div>
+
+  <h2>Total</h2> 
+   <div id="total-div">
+      <h3  id="total_amount">
+   
         <!--Show bucket total here, do not add anything only Total value. Not even "Total - 1200Rs" but like this "1200" -->
       </h3>
+      <a href="checkout.html"><button id="confirm">Checkout</button></a>
     </div>
     <div id="bucket">
       <!--Show all coffee added to bucket here-->
       <!-- add an remove button to each coffee so that you can remove that item from bucket, give the button HTML id as 'remove_coffee' -->
     </div>
-<a href="checkout.html"><button id="confirm">Checkout</button></a>
+   
     <!-- checkout link  -->
   </body>
 </html>

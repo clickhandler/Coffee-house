@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="/Coffee-house/index.css" />
+    <script
+      src="https://kit.fontawesome.com/57a88932f2.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<style>
+    #login-form-div{
+    width: 50%;
+    height: auto;
+    text-align: center;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+    background-image: radial-gradient(circle, #5c0067 0%, #00d4ff 100%);
+    
+}
+h1{
+   display: inline-block;
+}
+#loginstyle input{
+ border: 1px solid gray;
+ padding: 10px 20px 10px 20px;
+ margin: 5px;
+ border-radius: 5px;
+}
+#btn input{
+    background-color: teal;
+    border: none;
+    color: white;
+    padding: 10px 50px 10px 50px;
+    border-radius: 7px;
+    margin: 20px;
+
+}
+#btn input:hover{
+    cursor: pointer;
+}
+</style>
+
+<body>
+    <div id="navbar">
+        <nav>
+          <a href="index.html">
+            <h1>Coffee House <i class="fa-solid fa-mug-hot"></i></h1
+          ></a>
+        </nav>
+      </div>
+    <div id="login-form-div">
+
+        <form id="form">
+            <h1>Login</h1>
+            <div id="loginstyle"><input type="email" placeholder="Enter Your Email" id="email"></div>
+            <div id="loginstyle"><input type="password" placeholder="Enter Your Password" id="password"></div>
+            <div id="btn"><input type="submit"></div>
+        </form>
+
+    </div>
+</body>
+
+</html>
+<script>
+    document.querySelector("#form").addEventListener("submit", LoginAccount);
+    var UserInformation = JSON.parse(localStorage.getItem("UserData")) || []
+
+    function LoginAccount() {
+        event.preventDefault()
+
+        var p = []
+        var q = []
+
+
+        UserInformation.forEach(function (elem) {
+            p.push(elem.UserEmail)
+            q.push(elem.usePass)
+        })
+        var userE = document.querySelector("#email")
+        var userP = document.querySelector("#password")
+
+        for (var i = 0; i < q.length; i++) {
+            if (userE.value === p[i] && userP.value === q[i]) {
+
+                alert("Login Successful");
+                window.location.href = "index.html"
+
+                break;
+
+
+            }
+
+            else {
+                alert("Incorrect Email or Password");
+                break;
+            }
+        }
+
+
+    }
+
+
+</script>
